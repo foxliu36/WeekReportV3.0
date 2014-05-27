@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WeekReportModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="WeekReportModelStoreContainer">
+          <EntitySet Name="TB_CarAssRe" EntityType="WeekReportModel.Store.TB_CarAssRe" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_DeInfo" EntityType="WeekReportModel.Store.TB_DeInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_HumanRe" EntityType="WeekReportModel.Store.TB_HumanRe" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_InsurenceRe" EntityType="WeekReportModel.Store.TB_InsurenceRe" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_MonthGoal" EntityType="WeekReportModel.Store.TB_MonthGoal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_OldCarSaleRe" EntityType="WeekReportModel.Store.TB_OldCarSaleRe" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_OrderReport" EntityType="WeekReportModel.Store.TB_OrderReport" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_Report" EntityType="WeekReportModel.Store.TB_Report" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_User" EntityType="WeekReportModel.Store.TB_User" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="TB_CarAssRe">
+          <Key>
+            <PropertyRef Name="CarAssReID" />
+          </Key>
+          <Property Name="CarAssReID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RefinementNum" Type="int" />
+          <Property Name="VAudioNum" Type="int" />
+          <Property Name="RefineDetail" Type="nvarchar" MaxLength="500" />
+          <Property Name="AssProNum" Type="int" />
+          <Property Name="PDSProNum" Type="int" />
+          <Property Name="OthersProDetail" Type="nvarchar" MaxLength="500" />
+          <Property Name="SelfNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="TB_DeInfo">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dep" Type="nvarchar" MaxLength="50" />
+          <Property Name="fatherdep" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_HumanRe">
+          <Key>
+            <PropertyRef Name="HumanResourceReID" />
+          </Key>
+          <Property Name="HumanResourceReID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="PeopleNeed" Type="int" />
+          <Property Name="Interview" Type="int" />
+          <Property Name="NewEmpDetail" Type="nvarchar" MaxLength="500" />
+          <Property Name="SpecialEmp" Type="nvarchar" MaxLength="500" />
+          <Property Name="WeekGoodEmp" Type="nvarchar" MaxLength="500" />
+          <Property Name="SelfNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="TB_InsurenceRe">
+          <Key>
+            <PropertyRef Name="InsurenceID" />
+          </Key>
+          <Property Name="InsurenceID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="InGoal" Type="int" />
+          <Property Name="AnyCaseToNow" Type="int" />
+          <Property Name="CarBdCaseToNow" Type="int" />
+          <Property Name="MoneyToNow" Type="int" />
+          <Property Name="InSecCon" Type="int" />
+          <Property Name="CarBdSec" Type="int" />
+          <Property Name="AnyCaseSec" Type="int" />
+          <Property Name="WeekTotalBd" Type="int" />
+          <Property Name="MonTotalExR" Type="int" />
+          <Property Name="MonAnyExR" Type="int" />
+          <Property Name="MonBdExR" Type="int" />
+          <Property Name="RefinProject" Type="nvarchar" MaxLength="500" />
+          <Property Name="TotalWeekImport" Type="int" />
+          <Property Name="SelfNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="TB_MonthGoal">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Bureau" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Class" Type="int" Nullable="false" />
+          <Property Name="yyyy" Type="int" Nullable="false" />
+          <Property Name="mm" Type="int" Nullable="false" />
+          <Property Name="InGoalNum" Type="int" />
+          <Property Name="InAny" Type="int" />
+          <Property Name="InBd" Type="int" />
+          <Property Name="OrderNum" Type="int" />
+        </EntityType>
+        <EntityType Name="TB_OldCarSaleRe">
+          <Key>
+            <PropertyRef Name="OldCarSaleReID" />
+          </Key>
+          <Property Name="OldCarSaleReID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ChangeBuy" Type="int" />
+          <Property Name="BuyEx" Type="int" />
+          <Property Name="DealNum" Type="int" />
+          <Property Name="FailDealDetail" Type="nvarchar" MaxLength="500" />
+          <Property Name="SelfNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="TB_OrderReport">
+          <Key>
+            <PropertyRef Name="OrderReID" />
+          </Key>
+          <Property Name="OrderReID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MonthGoal" Type="int" />
+          <Property Name="OrderedCount" Type="int" />
+          <Property Name="SaleCount" Type="int" />
+          <Property Name="OnControl" Type="int" />
+          <Property Name="Expectations" Type="int" />
+          <Property Name="OrderDetail" Type="nvarchar" MaxLength="500" />
+          <Property Name="UnorderDetail" Type="nvarchar" MaxLength="500" />
+          <Property Name="WeekCar" Type="nvarchar" MaxLength="500" />
+          <Property Name="Others" Type="nvarchar" MaxLength="500" />
+          <Property Name="SelfNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="TB_Report">
+          <Key>
+            <PropertyRef Name="ReportID" />
+          </Key>
+          <Property Name="ReportID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TimeStart" Type="datetime" />
+          <Property Name="TimeEnd" Type="datetime" />
+          <Property Name="LastEditor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Writer" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bureau" Type="nvarchar" MaxLength="50" />
+          <Property Name="Class" Type="int" />
+          <Property Name="GoalStatus" Type="bit" />
+          <Property Name="OrderReID" Type="nvarchar" MaxLength="50" />
+          <Property Name="InsurenceReID" Type="nvarchar" MaxLength="50" />
+          <Property Name="OldCarSaleReID" Type="nvarchar" MaxLength="50" />
+          <Property Name="CarAssReID" Type="nvarchar" MaxLength="50" />
+          <Property Name="HumanManageReID" Type="nvarchar" MaxLength="50" />
+          <Property Name="L2Comment" Type="nvarchar" MaxLength="500" />
+          <Property Name="L3Comment" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TB_User">
+          <Key>
+            <PropertyRef Name="Acc" />
+          </Key>
+          <Property Name="Acc" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Bureau" Type="nvarchar" MaxLength="50" />
+          <Property Name="Class" Type="int" />
+          <Property Name="pass" Type="nvarchar" MaxLength="50" />
+          <Property Name="lv" Type="int" />
+          <Property Name="edit" Type="bit" />
+          <Property Name="deleteable" Type="bit" />
+          <Property Name="write" Type="bit" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WeekReportModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="WeekReportEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="TB_CarAssRe" EntityType="WeekReportModel.TB_CarAssRe" />
+          <EntitySet Name="TB_DeInfo" EntityType="WeekReportModel.TB_DeInfo" />
+          <EntitySet Name="TB_HumanRe" EntityType="WeekReportModel.TB_HumanRe" />
+          <EntitySet Name="TB_InsurenceRe" EntityType="WeekReportModel.TB_InsurenceRe" />
+          <EntitySet Name="TB_MonthGoal" EntityType="WeekReportModel.TB_MonthGoal" />
+          <EntitySet Name="TB_OldCarSaleRe" EntityType="WeekReportModel.TB_OldCarSaleRe" />
+          <EntitySet Name="TB_OrderReport" EntityType="WeekReportModel.TB_OrderReport" />
+          <EntitySet Name="TB_Report" EntityType="WeekReportModel.TB_Report" />
+          <EntitySet Name="TB_User" EntityType="WeekReportModel.TB_User" />
+        </EntityContainer>
+        <EntityType Name="TB_CarAssRe">
+          <Key>
+            <PropertyRef Name="CarAssReID" />
+          </Key>
+          <Property Name="CarAssReID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RefinementNum" Type="Int32" />
+          <Property Name="VAudioNum" Type="Int32" />
+          <Property Name="RefineDetail" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="AssProNum" Type="Int32" />
+          <Property Name="PDSProNum" Type="Int32" />
+          <Property Name="OthersProDetail" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="SelfNumber" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TB_DeInfo">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="dep" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="fatherdep" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TB_HumanRe">
+          <Key>
+            <PropertyRef Name="HumanResourceReID" />
+          </Key>
+          <Property Name="HumanResourceReID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PeopleNeed" Type="Int32" />
+          <Property Name="Interview" Type="Int32" />
+          <Property Name="NewEmpDetail" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="SpecialEmp" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="WeekGoodEmp" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="SelfNumber" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TB_InsurenceRe">
+          <Key>
+            <PropertyRef Name="InsurenceID" />
+          </Key>
+          <Property Name="InsurenceID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="InGoal" Type="Int32" />
+          <Property Name="AnyCaseToNow" Type="Int32" />
+          <Property Name="CarBdCaseToNow" Type="Int32" />
+          <Property Name="MoneyToNow" Type="Int32" />
+          <Property Name="InSecCon" Type="Int32" />
+          <Property Name="CarBdSec" Type="Int32" />
+          <Property Name="AnyCaseSec" Type="Int32" />
+          <Property Name="WeekTotalBd" Type="Int32" />
+          <Property Name="MonTotalExR" Type="Int32" />
+          <Property Name="MonAnyExR" Type="Int32" />
+          <Property Name="MonBdExR" Type="Int32" />
+          <Property Name="RefinProject" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="TotalWeekImport" Type="Int32" />
+          <Property Name="SelfNumber" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TB_MonthGoal">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Bureau" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Class" Type="Int32" Nullable="false" />
+          <Property Name="yyyy" Type="Int32" Nullable="false" />
+          <Property Name="mm" Type="Int32" Nullable="false" />
+          <Property Name="InGoalNum" Type="Int32" />
+          <Property Name="InAny" Type="Int32" />
+          <Property Name="InBd" Type="Int32" />
+          <Property Name="OrderNum" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TB_OldCarSaleRe">
+          <Key>
+            <PropertyRef Name="OldCarSaleReID" />
+          </Key>
+          <Property Name="OldCarSaleReID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ChangeBuy" Type="Int32" />
+          <Property Name="BuyEx" Type="Int32" />
+          <Property Name="DealNum" Type="Int32" />
+          <Property Name="FailDealDetail" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="SelfNumber" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TB_OrderReport">
+          <Key>
+            <PropertyRef Name="OrderReID" />
+          </Key>
+          <Property Name="OrderReID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MonthGoal" Type="Int32" />
+          <Property Name="OrderedCount" Type="Int32" />
+          <Property Name="SaleCount" Type="Int32" />
+          <Property Name="OnControl" Type="Int32" />
+          <Property Name="Expectations" Type="Int32" />
+          <Property Name="OrderDetail" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="UnorderDetail" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="WeekCar" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Others" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="SelfNumber" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TB_Report">
+          <Key>
+            <PropertyRef Name="ReportID" />
+          </Key>
+          <Property Name="ReportID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TimeStart" Type="DateTime" Precision="3" />
+          <Property Name="TimeEnd" Type="DateTime" Precision="3" />
+          <Property Name="LastEditor" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Writer" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Bureau" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Class" Type="Int32" />
+          <Property Name="GoalStatus" Type="Boolean" />
+          <Property Name="OrderReID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="InsurenceReID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OldCarSaleReID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CarAssReID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="HumanManageReID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="L2Comment" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="L3Comment" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TB_User">
+          <Key>
+            <PropertyRef Name="Acc" />
+          </Key>
+          <Property Name="Acc" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Bureau" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Class" Type="Int32" />
+          <Property Name="pass" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="lv" Type="Int32" />
+          <Property Name="edit" Type="Boolean" />
+          <Property Name="deleteable" Type="Boolean" />
+          <Property Name="write" Type="Boolean" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WeekReportModelStoreContainer" CdmEntityContainer="WeekReportEntities">
+          <EntitySetMapping Name="TB_CarAssRe">
+            <EntityTypeMapping TypeName="WeekReportModel.TB_CarAssRe">
+              <MappingFragment StoreEntitySet="TB_CarAssRe">
+                <ScalarProperty Name="CarAssReID" ColumnName="CarAssReID" />
+                <ScalarProperty Name="RefinementNum" ColumnName="RefinementNum" />
+                <ScalarProperty Name="VAudioNum" ColumnName="VAudioNum" />
+                <ScalarProperty Name="RefineDetail" ColumnName="RefineDetail" />
+                <ScalarProperty Name="AssProNum" ColumnName="AssProNum" />
+                <ScalarProperty Name="PDSProNum" ColumnName="PDSProNum" />
+                <ScalarProperty Name="OthersProDetail" ColumnName="OthersProDetail" />
+                <ScalarProperty Name="SelfNumber" ColumnName="SelfNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_DeInfo">
+            <EntityTypeMapping TypeName="WeekReportModel.TB_DeInfo">
+              <MappingFragment StoreEntitySet="TB_DeInfo">
+                <ScalarProperty Name="sid" ColumnName="sid" />
+                <ScalarProperty Name="dep" ColumnName="dep" />
+                <ScalarProperty Name="fatherdep" ColumnName="fatherdep" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_HumanRe">
+            <EntityTypeMapping TypeName="WeekReportModel.TB_HumanRe">
+              <MappingFragment StoreEntitySet="TB_HumanRe">
+                <ScalarProperty Name="HumanResourceReID" ColumnName="HumanResourceReID" />
+                <ScalarProperty Name="PeopleNeed" ColumnName="PeopleNeed" />
+                <ScalarProperty Name="Interview" ColumnName="Interview" />
+                <ScalarProperty Name="NewEmpDetail" ColumnName="NewEmpDetail" />
+                <ScalarProperty Name="SpecialEmp" ColumnName="SpecialEmp" />
+                <ScalarProperty Name="WeekGoodEmp" ColumnName="WeekGoodEmp" />
+                <ScalarProperty Name="SelfNumber" ColumnName="SelfNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_InsurenceRe">
+            <EntityTypeMapping TypeName="WeekReportModel.TB_InsurenceRe">
+              <MappingFragment StoreEntitySet="TB_InsurenceRe">
+                <ScalarProperty Name="InsurenceID" ColumnName="InsurenceID" />
+                <ScalarProperty Name="InGoal" ColumnName="InGoal" />
+                <ScalarProperty Name="AnyCaseToNow" ColumnName="AnyCaseToNow" />
+                <ScalarProperty Name="CarBdCaseToNow" ColumnName="CarBdCaseToNow" />
+                <ScalarProperty Name="MoneyToNow" ColumnName="MoneyToNow" />
+                <ScalarProperty Name="InSecCon" ColumnName="InSecCon" />
+                <ScalarProperty Name="CarBdSec" ColumnName="CarBdSec" />
+                <ScalarProperty Name="AnyCaseSec" ColumnName="AnyCaseSec" />
+                <ScalarProperty Name="WeekTotalBd" ColumnName="WeekTotalBd" />
+                <ScalarProperty Name="MonTotalExR" ColumnName="MonTotalExR" />
+                <ScalarProperty Name="MonAnyExR" ColumnName="MonAnyExR" />
+                <ScalarProperty Name="MonBdExR" ColumnName="MonBdExR" />
+                <ScalarProperty Name="RefinProject" ColumnName="RefinProject" />
+                <ScalarProperty Name="TotalWeekImport" ColumnName="TotalWeekImport" />
+                <ScalarProperty Name="SelfNumber" ColumnName="SelfNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_MonthGoal">
+            <EntityTypeMapping TypeName="WeekReportModel.TB_MonthGoal">
+              <MappingFragment StoreEntitySet="TB_MonthGoal">
+                <ScalarProperty Name="sid" ColumnName="sid" />
+                <ScalarProperty Name="Bureau" ColumnName="Bureau" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="yyyy" ColumnName="yyyy" />
+                <ScalarProperty Name="mm" ColumnName="mm" />
+                <ScalarProperty Name="InGoalNum" ColumnName="InGoalNum" />
+                <ScalarProperty Name="InAny" ColumnName="InAny" />
+                <ScalarProperty Name="InBd" ColumnName="InBd" />
+                <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_OldCarSaleRe">
+            <EntityTypeMapping TypeName="WeekReportModel.TB_OldCarSaleRe">
+              <MappingFragment StoreEntitySet="TB_OldCarSaleRe">
+                <ScalarProperty Name="OldCarSaleReID" ColumnName="OldCarSaleReID" />
+                <ScalarProperty Name="ChangeBuy" ColumnName="ChangeBuy" />
+                <ScalarProperty Name="BuyEx" ColumnName="BuyEx" />
+                <ScalarProperty Name="DealNum" ColumnName="DealNum" />
+                <ScalarProperty Name="FailDealDetail" ColumnName="FailDealDetail" />
+                <ScalarProperty Name="SelfNumber" ColumnName="SelfNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_OrderReport">
+            <EntityTypeMapping TypeName="WeekReportModel.TB_OrderReport">
+              <MappingFragment StoreEntitySet="TB_OrderReport">
+                <ScalarProperty Name="OrderReID" ColumnName="OrderReID" />
+                <ScalarProperty Name="MonthGoal" ColumnName="MonthGoal" />
+                <ScalarProperty Name="OrderedCount" ColumnName="OrderedCount" />
+                <ScalarProperty Name="SaleCount" ColumnName="SaleCount" />
+                <ScalarProperty Name="OnControl" ColumnName="OnControl" />
+                <ScalarProperty Name="Expectations" ColumnName="Expectations" />
+                <ScalarProperty Name="OrderDetail" ColumnName="OrderDetail" />
+                <ScalarProperty Name="UnorderDetail" ColumnName="UnorderDetail" />
+                <ScalarProperty Name="WeekCar" ColumnName="WeekCar" />
+                <ScalarProperty Name="Others" ColumnName="Others" />
+                <ScalarProperty Name="SelfNumber" ColumnName="SelfNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Report">
+            <EntityTypeMapping TypeName="WeekReportModel.TB_Report">
+              <MappingFragment StoreEntitySet="TB_Report">
+                <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+                <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
+                <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
+                <ScalarProperty Name="LastEditor" ColumnName="LastEditor" />
+                <ScalarProperty Name="Writer" ColumnName="Writer" />
+                <ScalarProperty Name="Bureau" ColumnName="Bureau" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="GoalStatus" ColumnName="GoalStatus" />
+                <ScalarProperty Name="OrderReID" ColumnName="OrderReID" />
+                <ScalarProperty Name="InsurenceReID" ColumnName="InsurenceReID" />
+                <ScalarProperty Name="OldCarSaleReID" ColumnName="OldCarSaleReID" />
+                <ScalarProperty Name="CarAssReID" ColumnName="CarAssReID" />
+                <ScalarProperty Name="HumanManageReID" ColumnName="HumanManageReID" />
+                <ScalarProperty Name="L2Comment" ColumnName="L2Comment" />
+                <ScalarProperty Name="L3Comment" ColumnName="L3Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_User">
+            <EntityTypeMapping TypeName="WeekReportModel.TB_User">
+              <MappingFragment StoreEntitySet="TB_User">
+                <ScalarProperty Name="Acc" ColumnName="Acc" />
+                <ScalarProperty Name="Bureau" ColumnName="Bureau" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="lv" ColumnName="lv" />
+                <ScalarProperty Name="edit" ColumnName="edit" />
+                <ScalarProperty Name="deleteable" ColumnName="deleteable" />
+                <ScalarProperty Name="write" ColumnName="write" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
