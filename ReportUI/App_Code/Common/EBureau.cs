@@ -6,7 +6,7 @@ using System.Web;
 /// <summary>
 /// ClassResponse 的摘要描述
 /// </summary>
-public enum ClassResponse
+public enum EBureau
 {
 	F03,
     F04,
