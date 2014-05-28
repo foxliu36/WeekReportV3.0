@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// ClassResponse 的摘要描述
+/// 
 /// </summary>
 public enum EBureau
 {
