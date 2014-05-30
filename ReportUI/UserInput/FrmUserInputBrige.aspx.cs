@@ -72,30 +72,30 @@ public partial class UserInput_FrmUserInputBrige : System.Web.UI.Page
         }
     }
 
-
+    #region NAVButton
     protected void BtnOrClick(object sender, EventArgs e)
     {
-        Response.Redirect("./UserInput1.aspx");
+        Response.Redirect("./FrmUserInput1.aspx");
     }
 
     protected void BtnInClick(object sender, EventArgs e)
     {
-        Response.Redirect("./UserInput2.aspx");
+        Response.Redirect("./FrmUserInput2.aspx");
     }
 
     protected void BtnOlClick(object sender, EventArgs e)
     {
-        Response.Redirect("./UserInput3.aspx");
+        Response.Redirect("./FrmUserInput3.aspx");
     }
 
     protected void BtnCaClick(object sender, EventArgs e)
     {
-        Response.Redirect("./UserInput4.aspx");
+        Response.Redirect("./FrmUserInput4.aspx");
     }
 
     protected void BtnHuClick(object sender, EventArgs e)
     {
-        Response.Redirect("./UserInput5.aspx");
+        Response.Redirect("./FrmUserInput5.aspx");
     }
 
     public DateTime GetTime0(DateTime pDt)
@@ -107,6 +107,7 @@ public partial class UserInput_FrmUserInputBrige : System.Web.UI.Page
     {
         return DateTime.Parse(pDt.ToString("yyyy-MM-dd") + " 23:59:59");
     }
+    #endregion
 
     //true 已經有資料
     public bool CheckExist()
