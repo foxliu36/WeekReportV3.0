@@ -2,13 +2,8 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="radio">
+    <div id="navbutton">
             
-            月-日
-            <asp:RadioButtonList ID="rblweek" runat="server" RepeatDirection="Horizontal">
-            </asp:RadioButtonList>
-            (存顯示只能打本周而已)<br /><br />
-
             <asp:Button ID="btnStart" runat="server" Text="開啟新的周報表" OnClick="BtnStartClick"/> <br />
             新增或編輯: <br />
             <asp:Button ID="btnOr" runat="server" Text="受訂&販賣推進" OnClick="BtnOrClick" Enabled="False" />
@@ -17,7 +12,7 @@
             <asp:Button ID="btnCa" runat="server" Text="精裝配件推進" OnClick="BtnCaClick" Enabled="False" />
             <asp:Button ID="btnHu" runat="server" Text="人員管理" OnClick="BtnHuClick" Enabled="False" />
             
-        </div>
+    </div>
         查看歷史表單:<br />
 
         <asp:GridView ID="gvShowAll" runat="server" AutoGenerateColumns="False" DataKeyNames="ReportID" OnRowCommand="GvShowAllRowCommand">
@@ -31,10 +26,11 @@
             </Columns>
         </asp:GridView>
 </asp:Content>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <script type="text/javascript">
         $(function () {
-            $("#radio").buttonset();
+            $("#navbutton").buttonset();
         });
-</script>
+    </script>
 </asp:Content>

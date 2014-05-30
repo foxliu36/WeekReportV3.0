@@ -17,9 +17,9 @@ public class Defense
     {
         HttpContext.Current.Response.Write("此程式已經有防禦SQL攻擊保護功能 <br />");
 
-        if (HttpContext.Current.Session["user"] == null)
+        if (HttpContext.Current.Session[GlobalInfo.Session_User] == null)
         {
-            HttpContext.Current.Response.Redirect("~/Login.aspx");
+            HttpContext.Current.Response.Redirect("~/FrmLogin.aspx");
         }
     }
 

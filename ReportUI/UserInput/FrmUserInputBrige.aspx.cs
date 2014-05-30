@@ -12,7 +12,6 @@ public partial class UserInput_FrmUserInputBrige : System.Web.UI.Page
     {
         if (!Page.IsPostBack)
         {
-            GetDateDisplay();
         }
         if (CheckExist())
         {
@@ -73,18 +72,6 @@ public partial class UserInput_FrmUserInputBrige : System.Web.UI.Page
         }
     }
 
-    //顯示當日是哪個週期 並回傳當周第一天
-    public void GetDateDisplay()
-    {
-        DateTime[] lAdt = Tool.GetTimePoint().ToArray();
-
-        for (int i = 0; i < lAdt.Count() - 1; i++)
-        {
-
-            rblweek.Items.Add(lAdt[i].ToString("MM-dd") + " ~ " + lAdt[i + 1].ToString("MM-dd"));
-        }
-
-    }
 
     protected void BtnOrClick(object sender, EventArgs e)
     {
@@ -157,7 +144,7 @@ public partial class UserInput_FrmUserInputBrige : System.Web.UI.Page
 
             Session[GlobalInfo.Session_ShowAllParam] = index;
 
-            Response.Redirect("~/ShowAll.aspx");
+            Response.Redirect("~/FrmShowAll.aspx");
         }
     }
 }
