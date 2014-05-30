@@ -11,7 +11,7 @@
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <link rel="stylesheet" href="/resources/demos/style.css">
     
-    <%Defense.SqlInjectDefense(); %>
+    
     <style type="text/css">
         #wrapper {
 	        height: 100%;

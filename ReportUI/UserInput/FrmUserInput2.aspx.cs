@@ -10,6 +10,7 @@ public partial class UserInput_FrmUserInput2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        Defense.SqlInjectDefense();
         if (!Page.IsPostBack)
         {
             LoadReportData();
